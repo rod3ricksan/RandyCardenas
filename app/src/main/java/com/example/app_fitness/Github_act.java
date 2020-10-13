@@ -38,36 +38,49 @@ public class Github_act extends AppCompatActivity {
     }
     public void Calcular(View v)
     {
-        String libros = spin1.getSelectedItem().toString();// almaceno selección del spinner.
+        String libros = spin1.getSelectedItem().toString();
 
 
 
-        Planes libro= new Planes();  // Construir mi objeto.
+        Planes libro= new Planes();
         int resultFarenheith = libro.getFarenheith();
         int resultRevival =  libro.getRevival();
         int resultElAlquimista = libro.getElAlquimista();
+        int resultDespertar =  libro.getElDespertar();
+        int resultelPoder =  libro.getElPoder();
 
 
-        // Inteligencia farenheith
 
-        if(libros.equals("farenheith"))
+        if(libros.equals("Farenheith"))
         {
             text.setText("El precio del libro es "+ resultFarenheith);
         }
 
 
-        // Inteligencia revival
 
-        if(libros.equals("revival"))
+        if(libros.equals("Revival"))
         {
-            text.setText("El precio del plan es: "+resultRevival );
+            text.setText("El precio del Libro es: "+resultRevival );
         }
 
 
 
-        if(libros.equals("elAlquimista") )
+        if(libros.equals("El Alquimista") )
         {
-            text.setText("El precio del plan es: "+resultElAlquimista );
+            text.setText("El precio del Libro es: "+resultElAlquimista );
+        }
+
+
+        if(libros.equals("Despertar") )
+        {
+            text.setText("El precio del Libro es: "+resultDespertar );
+        }
+
+
+
+        if(libros.equals("El Poder") )
+        {
+            text.setText("El precio del Libro es: "+resultelPoder );
         }
     }
 }

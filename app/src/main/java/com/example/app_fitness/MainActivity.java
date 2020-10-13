@@ -22,20 +22,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        progress = (ProgressBar)findViewById(R.id.pb);
-        btn = (Button)findViewById(R.id.btn);
+        progress = (ProgressBar) findViewById(R.id.pb);
+        btn = (Button) findViewById(R.id.btn);
 
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                new Task().execute(); // ejecuta mi tarea asíncrona.
+                new Task().execute();
             }
         });
 
 
-        progress.setVisibility(View.INVISIBLE); // desaparece el elemento.
+        progress.setVisibility(View.INVISIBLE);
     }
 
 
@@ -43,23 +43,21 @@ public class MainActivity extends AppCompatActivity {
 
     class Task extends AsyncTask<String, Void, String> {
 
-        @Override  // Vamos a darle la configuración inicial a la tarea
+        @Override
         protected void onPreExecute() {
 
             progress.setVisibility(View.VISIBLE);
         }
 
 
-        @Override // vamos a emplear el proceso o tarea pesada en segundo plano.
+        @Override
         protected String doInBackground(String... strings) {
 
-            for(int i = 1; i < 10; i++)
-            {
+            for (int i = 1; i < 10; i++) {
                 try {
                     Thread.sleep(1000);
 
-                }catch (Exception e)
-                {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -67,29 +65,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        @Override // finalizamos la tarea
-        protected void onPostExecute(String s) {
-
-            progress.setVisibility(View.INVISIBLE);
-
-            Intent i = new Intent(getBaseContext(), Menu_act.class);
-            startActivity(i);
-
-        }
     }
-    public void Libros (View v)
-    {
-        ArrayList <String> Libros = new ArrayList<>();
+    public void Libros (View v) {
+        ArrayList<String> Libros = new ArrayList<>();
 
-        Libros.add("farenheith");
-        Libros.add("revival");
-        Libros.add("Elalquimista");
+        Libros.add("Farenheith");
+        Libros.add("Revival");
+        Libros.add("El Alquimista");
+        Libros.add("Despertar");
+        Libros.add("El Poder");
 
-        Intent i = new Intent (this,Github_act.class);
+        Intent i = new Intent(getBaseContext(), Github_act.class);
 
-        i.putExtra("listalibros", Libros); // preparo el dato que quiero envíar.
+        i.putExtra("listalibros", Libros);
         startActivity(i);
+
     }
-
-
 }

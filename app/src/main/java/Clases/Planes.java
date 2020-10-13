@@ -9,6 +9,8 @@ public class Planes
     private int farenheith;
     private int revival;
     private int elAlquimista;
+    private int elPoder;
+    private int elDespertar;
 
 
     // Constructor
@@ -16,8 +18,10 @@ public class Planes
     public Planes()
     {
         elAlquimista = 45000;
-        revival = 12000;
-        farenheith = 5000;
+        revival = 22000;
+        farenheith = 7000;
+        elPoder = 88000;
+        elDespertar = 156000;
     }
 
     // Accesadores
@@ -34,5 +38,8 @@ public class Planes
 
     public int getElAlquimista() { return elAlquimista; }
 
+    public int getElPoder() { return elPoder; }
+
+    public int getElDespertar() { return elDespertar; }
 
 }
